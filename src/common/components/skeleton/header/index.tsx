@@ -11,7 +11,7 @@ export const Header = () => {
     const pathname = usePathname();
 
     return (
-        <header className='bg-[#111111] text-gray-100 py-2 '>
+        <header className='absolute z-50 w-full bg-[#111111] text-gray-100 py-2 '>
             <Container>
                 <div className='flex justify-between items-center'>
                     <div className=''>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/assets/styles/globals.css";
-import { gorditaRegular } from "@/assets/fonts";
+import { gorditaRegular } from "../assets/fonts";
 import { Header } from "@/common/components/skeleton/header";
 import { Footer } from "@/common/components/skeleton/footer";
 
