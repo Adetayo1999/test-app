@@ -3,5 +3,5 @@ interface ContainerProps {
 }
 
 export const Container = ({ children }: ContainerProps) => {
-    return <div className='mx-auto w-[95%] md:w-[90%]'>{children}</div>;
+    return <div className='mx-auto w-[90%] md:w-[90%]'>{children}</div>;
 };

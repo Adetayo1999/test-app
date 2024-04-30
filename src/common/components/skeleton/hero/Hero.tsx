@@ -1,8 +1,6 @@
 
 import { HomeImages, SlideImages } from "@/utils/config"
-import CrossfadeSlider from "../animationimages/Slider"
 import Image from "next/image"
-import MessageCarousel from "../animationimages/Slider"
 import ImageCarousel from "../animationimages/Slider"
 
 

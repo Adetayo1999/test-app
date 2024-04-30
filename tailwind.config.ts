@@ -9,7 +9,8 @@ const config: Config = {
     theme: {
         extend: {
             fontFamily: {
-                bodoni: ['BodoniSeventyTwo'], 
+                bodoni: ["var(--font-bodoni)"],
+                gordita: ["var(--font-gordita)"],
             },
         },
     },
