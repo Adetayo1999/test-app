@@ -7,7 +7,12 @@ const config: Config = {
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                bodoni: ["var(--font-bodoni)"],
+                gordita: ["var(--font-gordita)"],
+            },
+        },
     },
     plugins: [],
 };

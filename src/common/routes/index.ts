@@ -12,7 +12,7 @@ export const routes = [
     {
         id: 3,
         title: "Portfolio",
-        path: "/porfolio",
+        path: "/portfolio",
     },
     {
         id: 4,
