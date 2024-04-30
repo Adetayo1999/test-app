@@ -1,5 +1,5 @@
 "use client"
-import { SlideTypes } from '@/common/types/types';
+import { SlideTypes } from '@/common/types/slider.types';
 import name from "@/assets/icons/name.svg"
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';

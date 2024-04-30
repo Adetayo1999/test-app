@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/assets/styles/globals.css";
-import { gorditaRegular } from "../assets/fonts";
+import { gordita, bodoni } from "@/assets/fonts";
 import { Header } from "@/common/components/skeleton/header";
 import { Footer } from "@/common/components/skeleton/footer";
 
@@ -16,7 +16,8 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
-            <body className={gorditaRegular.className}>
+            <body
+                className={`${gordita.variable} ${bodoni.variable} font-gordita`}>
                 <Header />
                 {children}
                 <Footer />

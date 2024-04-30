@@ -2,7 +2,7 @@
 import Slider from "react-slick";
 import "@/assets/styles/globals.css";
 import Image from "next/image";
-import { SlideTypes } from "@/common/types/types";
+import { SlideTypes } from "@/common/types/slider.types";
 
 export const SliderComponent:React.FC<SlideTypes> = ({listOfSlides}) => {
 
