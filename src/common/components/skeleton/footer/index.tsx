@@ -3,7 +3,7 @@ import { Container } from "../container";
 import logo from "@/assets/images/white_logo.png";
 import { routes } from "@/common/routes";
 import Link from "next/link";
-import { InstagramIcon, MailIcon, PinterestIcon, XIcon } from "@/assets/icons";
+import { InstagramIcon, MailIcon, PinterestIcon, XIcon } from "../../../../assets/icons";
 
 export const Footer = () => {
     return (
