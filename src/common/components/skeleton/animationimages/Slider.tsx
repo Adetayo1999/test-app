@@ -1,10 +1,7 @@
-"use client"
-import { SlideTypes } from '@/common/types/slider.types';
-import name from "@/assets/icons/name.svg"
-import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
-
-
+import { SlideTypes } from "@/common/types/slider.types";
+import name from "@/assets/icons/name.svg";
+import Image from "next/image";
+import React, { useState, useEffect } from "react";
 
 
 const ImageCarousel : React.FC<SlideTypes>= ({listOfSlides }) => {
@@ -14,7 +11,7 @@ const ImageCarousel : React.FC<SlideTypes>= ({listOfSlides }) => {
         const interval = setInterval(() => {
             setActiveIndex((current) => (current + 1) % listOfSlides.length);
         }, 5000);
-       return () => clearInterval(interval);
+        return () => clearInterval(interval);
     }, []);
 
     return (

@@ -11,6 +11,7 @@ export const HeroSection = () => {
             <div className="mt-[40vw] md:mt-[300px]">
             <ImageCarousel listOfSlides={SlideImages} />
             </div>
+
             <div className="mb-40 mt-[50vw] md:mt-0 mx-auto grid grid-cols-1 md:grid-cols-3 w-[88%] md:w-[58%] gap-8">
                 {
                     HomeImages.map((item) => (
@@ -21,8 +22,8 @@ export const HeroSection = () => {
                             text-center text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 {item.title}
                             </h1>
-                            </div>
-                            </Link>
+                           </div>
+                         </Link>
                     ))
                 }
             </div>
