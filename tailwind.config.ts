@@ -11,6 +11,7 @@ const config: Config = {
             fontFamily: {
                 bodoni: ["var(--font-bodoni)"],
                 gordita: ["var(--font-gordita)"],
+                inter: ["var(--font-inter)"]
             },
         },
     },

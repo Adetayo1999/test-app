@@ -23,4 +23,13 @@ const gordita = localFont({
     variable: "--font-gordita",
 });
 
-export { bodoni, gordita };
+const inter = localFont({
+    src: [
+        {
+            path: "./local/inter/Inter-Black.ttf",
+        }
+    ],
+    variable: "--font-inter"
+})
+
+export { bodoni, gordita, inter};
