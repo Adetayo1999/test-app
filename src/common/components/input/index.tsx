@@ -1,6 +1,7 @@
-import { InputType } from "@/common/types/input.types"
 
-export const InputField : React.FC<InputType>= ({title, placeholder, onChange, value}) => {
+import { InputHTMLAttributes } from "react"
+
+export const InputField: React.FC<InputHTMLAttributes<HTMLInputElement>>= ({title, placeholder, onChange, value}) => {
     return (
         <div className="w-full">
             <input

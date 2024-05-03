@@ -6,7 +6,7 @@ import { AIInitiativeData } from "@/common/data/aiinitiative";
 import { InputField } from "@/common/components/input";
 import { SetStateAction, useState } from "react";
 import { Buttons } from "@/common/components/buttons";
-import { SectionGenerator } from "@/common/components/section";
+import { SectionGenerator } from "@/common/components/aiinitiative-section";
 
 const AIInitiative = () => {
     const [email, setEmail] = useState("");
