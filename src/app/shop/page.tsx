@@ -1,11 +1,17 @@
 import { ShopBanner } from "./components/shop-banner";
 import { ShopCollection } from "./components/shop-collection";
 
-export default function Shop() {
+interface ShopPageProps {
+    searchParams: {
+        [key: string]: string;
+    };
+}
+
+export default function Shop(params: ShopPageProps) {
     return (
         <div className=''>
             <ShopBanner />
-            <ShopCollection />
+            <ShopCollection collection={params.searchParams.collection} />
         </div>
     );
 }

@@ -1,13 +1,15 @@
-"use client";
 import { SHOP_COLLECTION_DATA } from "@/common/data/shop-collection";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { ShopCollectionSection } from "../shop-collection-section";
 
-export const ShopCollection = () => {
-    const searchParams = useSearchParams();
+interface ShopCollectionProps {
+    collection?: string;
+}
 
-    const collectionType = searchParams.get("collection") || "all";
+export const ShopCollection: React.FC<ShopCollectionProps> = ({
+    collection,
+}) => {
+    const collectionType = collection || "all";
 
     return (
         <div className=''>
