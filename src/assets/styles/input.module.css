@@ -1,0 +1,9 @@
+/* Remove spinners from number inputs */
+.no_spinners::-webkit-inner-spin-button,
+.no_spinners::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.no_spinners {
+    -moz-appearance: textfield;
+}
