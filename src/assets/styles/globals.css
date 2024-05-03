@@ -6,8 +6,13 @@
 @import "slick-carousel/slick/slick-theme.css";
 
 @font-face {
-    font-family: 'BodoniSeventyTwo';
-    src: url('/src/assets/fonts/local/bodoni/bodoni-seventytwo-itc-book.ttf') format('ttf');
+    font-family: "BodoniSeventyTwo";
+    src: url("/src/assets/fonts/local/bodoni/bodoni-seventytwo-itc-book.ttf")
+        format("ttf");
     font-weight: 500;
     font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
 }
