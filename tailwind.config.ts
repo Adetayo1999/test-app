@@ -16,6 +16,15 @@ const config: Config = {
             backgroundImage: {
                 shop_banner: "url('../images/shop-images/shop-banner.png')",
             },
+            keyframes: {
+                fadeOut: {
+                    'from': { opacity: '1' },
+                    'to': { opacity: '0' }
+                },
+            },
+            animation: {
+                fadeOut: 'fadeOut 1s ease-out forwards'
+            }
         },
     },
     plugins: [],
