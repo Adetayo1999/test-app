@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { routes } from "@/common/routes";
 import { Container } from "../container";
 import logo from "@/assets/images/white_logo.png";
@@ -11,6 +11,7 @@ import { useCallback, useState } from "react";
 
 export const Header = () => {
     const pathname = usePathname();
+    const router = useRouter();
     const [modalStatus, setModalStatus] = useState(false);
 
     const handleModalClose = useCallback(() => {
@@ -29,11 +30,13 @@ export const Header = () => {
                         </button>
                     </div>
                     <div className='flex-1 md:flex-initial  flex md:block justify-center items-center '>
-                        <Image
-                            src={logo}
-                            alt='Omoyeni'
-                            className=' h-12 md:h-16'
-                        />
+                        <Link href='/'>
+                            <Image
+                                src={logo}
+                                alt='Omoyeni'
+                                className=' h-12 md:h-16'
+                            />
+                        </Link>
                     </div>
                     <nav className='hidden md:block'>
                         <ul className='flex items-center gap-x-[3.75rem] text-sm'>
@@ -51,7 +54,9 @@ export const Header = () => {
                         </ul>
                     </nav>
                     <div className='hidden md:block'>
-                        <button className='text-sm px-8 py-3 border rounded border-white border-opacity-50 font-medium transition duration-200 hover:bg-white hover:text-[#111111]'>
+                        <button
+                            className='text-sm px-8 py-3 border rounded border-white border-opacity-50 font-medium transition duration-200 hover:bg-white hover:text-[#111111]'
+                            onClick={() => router.push("/contact")}>
                             Contact
                         </button>
                     </div>
