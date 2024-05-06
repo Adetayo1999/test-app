@@ -6,16 +6,25 @@ import { Container } from "../container";
 import logo from "@/assets/images/white_logo.png";
 import Image from "next/image";
 import { HamburgerIcon } from "@/assets/icons/hamburger-icon";
+import { MobileNavbar } from "./mobile-navbar";
+import { useCallback, useState } from "react";
 
 export const Header = () => {
     const pathname = usePathname();
+    const [modalStatus, setModalStatus] = useState(false);
+
+    const handleModalClose = useCallback(() => {
+        setModalStatus(false);
+    }, []);
 
     return (
         <header className='relative z-50 w-full bg-[#111111] text-gray-100 py-2 '>
             <Container>
                 <div className='flex justify-between items-center'>
                     <div className='md:hidden'>
-                        <button className='cursor-pointer'>
+                        <button
+                            className='cursor-pointer'
+                            onClick={() => setModalStatus(true)}>
                             <HamburgerIcon scale={0.8} />
                         </button>
                     </div>
@@ -48,6 +57,7 @@ export const Header = () => {
                     </div>
                 </div>
             </Container>
+            <MobileNavbar handleClose={handleModalClose} status={modalStatus} />
         </header>
     );
 };
