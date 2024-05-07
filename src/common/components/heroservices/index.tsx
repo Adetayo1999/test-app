@@ -2,13 +2,15 @@
 
 import React from "react";
 import Image from "next/image";
-import img1 from "@/assets/images/img1.png";
+
 import headerImage from "@/assets/images/heroservices.png";
-import { SlideImages, listOfServices } from "@/utils/config";
+import { listOfServices } from "@/common/data/home-data";
 import { Buttons } from "../buttons";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { SliderComponent } from "../serviceslider";
+import ImageCarousel from "../animationimages/Slider";
+import { ServicesImages } from "@/common/data/services-data";
 export const ServicesHero = () => {
     return (
         <div>
@@ -25,7 +27,7 @@ export const ServicesHero = () => {
                 </h1>
             </div>
             <div
-                className='flex flex-col-reverse md:grid md:grid-cols-2 md:mb-20 p-4 md:p-12
+                className='flex flex-col-reverse md:grid md:grid-cols-2 md:mb-0 p-4 md:p-12
              w-full md:w-[90%] md:space-x-10 md:m-auto'>
                 <div className='w-full'>
                     <p className='font-bodoni text-xl mt-10 md:mt-0 md:text-3xl text-black font-[500]'>
@@ -45,10 +47,17 @@ export const ServicesHero = () => {
                         <Buttons title={"Book Consultation"} />
                     </div>
                 </div>
-                <Image src={img1} className='rounded-lg mt-2' alt='img-icon' />
+            
+                <div className="mt-[19rem] mb-[20rem] md:mb-0 md:mt-[23.5vw]">
+                    <ImageCarousel
+                        listOfSlides={ServicesImages}
+                        isBgTextPresent={false}
+                    />
+                </div>
+                
             </div>
             <div className='bg-[#000]'>
-                <SliderComponent listOfSlides={SlideImages} />
+                <SliderComponent listOfSlides={ServicesImages} />
             </div>
         </div>
     );

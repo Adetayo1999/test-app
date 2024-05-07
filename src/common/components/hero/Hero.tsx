@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { HomeImages, SlideImages } from "@/utils/config"
+import { HomeImages, SlideImages } from "@/common/data/home-data"
 import Image from "next/image"
-import x from "@/assets/images/about.png"
+
 import ImageCarousel from "../animationimages/Slider"
 
 
@@ -10,7 +10,10 @@ export const HeroSection = () => {
     return (
         <div className="flex flex-col gap-[180px] md:gap-[10rem]">
             <div className="mt-[40vw] md:mt-[300px]">
-                <ImageCarousel listOfSlides={SlideImages} />
+                <ImageCarousel
+                    listOfSlides={SlideImages}
+                    isBgTextPresent={true}
+                />
 
             </div>
 
