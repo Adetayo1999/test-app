@@ -18,7 +18,7 @@ export const PortfolioCard: React.FC<PortfolioType> = (props) => {
                     </p>
                     <Link
                         href={`/portfolio/${props.slug()}`}
-                        className='border border-white py-3 text-center min-w-[8rem] rounded-md text-white text-xs'>
+                        className='border border-white py-3 text-center min-w-[8rem] rounded-md text-white text-xs transition duration-200 hover:bg-white hover:text-[#111] font-medium'>
                         View More
                     </Link>
                 </div>
@@ -32,7 +32,7 @@ export const PortfolioCard: React.FC<PortfolioType> = (props) => {
                 </p>
                 <Link
                     href={`/portfolio/${props.slug()}`}
-                    className='border border-[#111] py-3 text-center w-fit rounded-md text-[#111] font-medium text-xs px-6'>
+                    className='border border-[#111] py-3 text-center w-fit rounded-md text-[#111]  text-xs px-6 font-medium  '>
                     View More
                 </Link>
             </div>

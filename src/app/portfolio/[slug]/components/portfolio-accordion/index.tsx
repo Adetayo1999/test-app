@@ -28,10 +28,10 @@ export const PortfolioAccordion: React.FC<PortfolioAccordionType> = ({
                         <path
                             d='M0.999998 17.5L17 1.5L33 17.5'
                             stroke='black'
-                            stroke-opacity='0.7'
-                            stroke-width='1.5'
-                            stroke-linecap='round'
-                            stroke-linejoin='round'
+                            strokeOpacity='0.7'
+                            strokeWidth='1.5'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
                         />
                     </svg>
                 </button>
