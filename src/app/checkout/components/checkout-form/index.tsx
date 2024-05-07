@@ -135,7 +135,7 @@ export const CheckoutForm = () => {
                 </div>
             </div>
             <div className='flex justify-center'>
-                <button className=' w-full px-6 rounded md:w-[40%] text-sm border-[#111111] py-3 border text-[#111111] font-medium'>
+                <button className=' w-full px-6 rounded md:w-[40%] text-sm border-[#111111] py-3 border text-[#111111] font-medium transition duration-300 hover:bg-[#111] hover:text-gray-50 '>
                     Pay Now
                 </button>
             </div>

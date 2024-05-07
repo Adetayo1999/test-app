@@ -1,11 +1,15 @@
+"use client";
 import { LiaTimesSolid } from "react-icons/lia";
 import { Table } from "@/common/components/table";
 import { TABLE_DATA, TABLE_HEADER } from "@/common/data/cart-data";
 import Image from "next/image";
 import { useMemo } from "react";
 import inputStyle from "@/assets/styles/input.module.css";
+import { useRouter } from "next/navigation";
 
 export const CartTable = () => {
+    const router = useRouter();
+
     const data = useMemo(
         () =>
             TABLE_DATA.map((item) => ({
@@ -61,7 +65,9 @@ export const CartTable = () => {
                 <Table columns={TABLE_HEADER} data={data} />
             </div>
             <div className='flex justify-center'>
-                <button className=' w-full px-6 rounded md:w-[40%] text-sm border-[#111111] py-3 border text-[#111111] font-medium'>
+                <button
+                    className=' w-full px-6 rounded md:w-[40%] text-sm border-[#111111] py-3 border text-[#111111] font-medium transition duration-300 hover:bg-[#111] hover:text-gray-50'
+                    onClick={() => router.push("/checkout")}>
                     Proceed to checkout
                 </button>
             </div>
