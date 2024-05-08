@@ -4,6 +4,7 @@ import { GrServices } from "react-icons/gr";
 import { FaBagShopping } from "react-icons/fa6";
 import { LuContact } from "react-icons/lu";
 import { MdPeople } from "react-icons/md";
+import { BsRobot } from "react-icons/bs";
 
 export const routes = [
     {
@@ -38,6 +39,12 @@ export const routes = [
     },
     {
         id: 6,
+        title: "AI Initiative",
+        path: "/ai-initiative",
+        icon: <BsRobot/>
+    },
+    {
+        id: 7,
         title: "Contact",
         path: "/contact",
         icon: <LuContact />,
