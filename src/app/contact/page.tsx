@@ -57,7 +57,7 @@ export default function ContactPage() {
                                     placeholder='Leave us a message...'
                                 />
                                 <div className=''>
-                                    <button className='border border-[#111] px-8 py-3 text-[#111] text-sm font-medium w-full md:w-fit'>
+                                    <button className='border border-[#111] px-8 py-3 text-[#111] text-sm font-medium w-full md:w-fit transition duration-200 hover:bg-[#111] hover:text-gray-50'>
                                         Submit
                                     </button>
                                 </div>
