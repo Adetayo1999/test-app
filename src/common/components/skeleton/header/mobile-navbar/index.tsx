@@ -29,7 +29,7 @@ export const MobileNavbar: React.FC<ModalNavbarProps> = ({
                     status ? "translate-x-0" : "-translate-x-[100%]"
                 }`}
                 onClick={(e) => e.stopPropagation()}>
-                <div className='bg-gray-800 min-h-[6rem] flex justify-between items-center  mb-8 py-6 px-6'>
+                <div className='bg-[#111111] min-h-[6rem] flex justify-between items-center  mb-8 py-6 px-6'>
                     <Link
                         href='/'
                         className='flex items-center'
@@ -41,7 +41,7 @@ export const MobileNavbar: React.FC<ModalNavbarProps> = ({
                         />
                     </Link>
                     <button
-                        className='bg-gray-50 rounded-full p-2 text-gray-800 font-semibold text-base'
+                        className='bg-gray-50 rounded-full p-2 text-[#111] font-semibold text-base'
                         onClick={handleClose}>
                         <LiaTimesSolid />
                     </button>
@@ -54,7 +54,7 @@ export const MobileNavbar: React.FC<ModalNavbarProps> = ({
                                     <Link
                                         href={path}
                                         onClick={handleClose}
-                                        className='text-xs px-8 py-3 border rounded border-gray-800 text-gray-800 border-opacity-50  flex justify-center items-center gap-x-3 transition duration-200 hover:text-gray-50 hover:bg-gray-800 font-medium'>
+                                        className='text-xs px-8 py-3 border rounded border-[#111] text-[#111] border-opacity-50  flex justify-center items-center gap-x-3 transition duration-200 hover:text-gray-50 hover:bg-[#111111] font-medium'>
                                         <span className='text-lg'>{icon}</span>
                                         <span>{title}</span>
                                     </Link>
@@ -64,7 +64,7 @@ export const MobileNavbar: React.FC<ModalNavbarProps> = ({
 
                         return (
                             <li
-                                className={`w-full flex items-center transition duration-200 text-gray-800 hover:rounded-md   h font-medium rounded hover:text-gray-50 hover:bg-gray-800 ${pathname === path ? "text-gray-50 bg-gray-800" : ""}`}
+                                className={`w-full flex items-center transition duration-200 text-[#111] hover:rounded-md   h font-medium rounded hover:text-gray-50 hover:bg-[#111111] ${pathname === path ? "text-gray-50 bg-[#111111]" : ""}`}
                                 key={id}>
                                 <Link
                                     className={`flex py-2 px-4 rounded-md cursor-pointer w-full h-14  items-center ${
