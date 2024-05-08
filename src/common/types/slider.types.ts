@@ -5,5 +5,6 @@ export interface SlideShow{
     image: StaticImageData,
 }
 export interface SlideTypes{
-    listOfSlides: SlideShow[]
+    listOfSlides: SlideShow[],
+    isBgTextPresent?: boolean
 }
