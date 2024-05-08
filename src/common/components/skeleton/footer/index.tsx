@@ -3,7 +3,12 @@ import { Container } from "../container";
 import logo from "@/assets/images/white_logo.png";
 import { routes } from "@/common/routes";
 import Link from "next/link";
-import { InstagramIcon, MailIcon, PinterestIcon, XIcon } from "../../../../assets/icons";
+import {
+    InstagramIcon,
+    MailIcon,
+    PinterestIcon,
+    XIcon,
+} from "../../../../assets/icons";
 
 export const Footer = () => {
     return (
@@ -50,7 +55,7 @@ export const Footer = () => {
                                     placeholder='Enter your email'
                                     className='md:flex-[0.7] px-2 py-2 text-sm w-full md:w-fit '
                                 />
-                                <button className='w-full md:w-fit md:flex-[0.3] text-sm py-2 border border-white border-opacity-50 rounded font-bold'>
+                                <button className='w-full md:w-fit md:flex-[0.3] text-sm py-2 border border-white border-opacity-50 rounded font-medium transition duration-300 hover:bg-gray-50 hover:text-[#111] '>
                                     Subscribe
                                 </button>
                             </form>
