@@ -19,9 +19,9 @@ export const FurnitureDescription: React.FC<FurnitureDescriptionProps> = ({
         case "left_aligned":
             return (
                 <div
-                    className='min-h-screen flex flex-col justify-between'
+                    className='md:min-h-screen flex flex-col justify-between'
                     style={{ background: color }}>
-                    <div className='pt-20 px-10 md:pt-40 md:px-40 md:pb-20 md:w-[60%]'>
+                    <div className='pt-20 pb-10 px-10 md:pt-40 md:px-40 md:pb-20 md:w-[60%]'>
                         <h1 className='text-[2.5rem] md:text-[4rem] text-white font-semibold font-gordita mb-5'>
                             {title}
                         </h1>
@@ -43,7 +43,7 @@ export const FurnitureDescription: React.FC<FurnitureDescriptionProps> = ({
 
         default:
             return (
-                <div className='min-h-screen' style={{ background: color }}>
+                <div className='md:min-h-screen' style={{ background: color }}>
                     <div className='pt-20 px-10  md:pt-40 md:px-40 pb-16 mx-auto md:w-[65%]'>
                         <div className='md:w-[50rem] md:h-[32.688rem] overflow-hidden mb-8'>
                             <Image
