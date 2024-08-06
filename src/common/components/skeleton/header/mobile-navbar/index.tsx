@@ -25,63 +25,59 @@ export const MobileNavbar: React.FC<ModalNavbarProps> = ({
             } transition duration-500`}
             onClick={handleClose}>
             <nav
-                className={`w-[65%] transition delay-100 duration-500 bg-slate-50 h-full    ${
-                    status ? "translate-x-0" : "-translate-x-[100%]"
+                className={`w-full transition delay-100 duration-500  h-fit py-6 bg-[#000000]  px-6   ${
+                    status ? "translate-y-0" : "-translate-y-[100%]"
                 }`}
                 onClick={(e) => e.stopPropagation()}>
-                <div className='bg-[#111111] min-h-[6rem] flex justify-between items-center  mb-8 py-6 px-6'>
-                    <Link
-                        href='/'
-                        className='flex items-center'
-                        onClick={handleClose}>
-                        <Image
-                            src={logo}
-                            alt='visacompanion'
-                            className='w-20'
-                        />
-                    </Link>
-                    <button
-                        className='bg-gray-50 rounded-full p-2 text-[#111] font-semibold text-base'
-                        onClick={handleClose}>
-                        <LiaTimesSolid />
+                <div className='flex justify-end mb-3'>
+                    <button className='' onClick={handleClose}>
+                        <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            width='16'
+                            height='16'
+                            viewBox='0 0 18 18'
+                            fill='none'>
+                            <path
+                                d='M18 1.81286L16.1871 0L9 7.18714L1.81286 0L0 1.81286L7.18714 9L0 16.1871L1.81286 18L9 10.8129L16.1871 18L18 16.1871L10.8129 9L18 1.81286Z'
+                                fill='white'
+                            />
+                        </svg>
                     </button>
                 </div>
-                <ul className='flex flex-col gap-y-4  py-6 px-6'>
-                    {routes.map(({ path, title, id, icon }) => {
-                        if (title.toLowerCase() === "contact") {
+                <ul className='flex items-center flex-col gap-y-2  py-6 px-6'>
+                    {routes
+                        .filter((item) => item.id !== 6)
+                        .map(({ path, title, id }) => {
                             return (
-                                <li key={id} className='mt-8'>
+                                <li
+                                    className={`flex items-center transition duration-200 text-[#FFFFFF] hover:rounded-md   h font-gordita rounded ${pathname === path ? "underline" : ""}`}
+                                    key={id}>
                                     <Link
-                                        href={path}
+                                        className={`flex text-sm py-2 px-4 rounded-md font-medium cursor-pointer w-full hover:underline   items-center ${
+                                            pathname === path
+                                                ? " text-gray-50"
+                                                : ""
+                                        }`}
                                         onClick={handleClose}
-                                        className='text-xs px-8 py-3 border rounded border-[#111] text-[#111] border-opacity-50  flex justify-center items-center gap-x-3 transition duration-200 hover:text-gray-50 hover:bg-[#111111] font-medium'>
-                                        <span className='text-lg'>{icon}</span>
-                                        <span>{title}</span>
+                                        href={path}>
+                                        {title}
                                     </Link>
                                 </li>
                             );
-                        }
-
-                        return (
-                            <li
-                                className={`w-full flex items-center transition duration-200 text-[#111] hover:rounded-md   h font-medium rounded hover:text-gray-50 hover:bg-[#111111] ${pathname === path ? "text-gray-50 bg-[#111111]" : ""}`}
-                                key={id}>
-                                <Link
-                                    className={`flex py-2 px-4 rounded-md cursor-pointer w-full h-14  items-center ${
-                                        pathname === path ? " text-gray-50" : ""
-                                    }`}
-                                    onClick={handleClose}
-                                    href={path}>
-                                    <div className='flex text-xs items-center gap-x-4'>
-                                        <span className='text-lg'>{icon}</span>
-                                        <span className=''>{title}</span>
-                                    </div>
-                                </Link>
-                            </li>
-                        );
-                    })}
+                        })}
                 </ul>
             </nav>
         </div>
     );
 };
+
+//  <svg
+// xmlns='http://www.w3.org/2000/svg'
+// width='18'
+// height='18'
+// viewBox='0 0 18 18'
+// fill='none'>
+// <path
+//     d='M18 1.81286L16.1871 0L9 7.18714L1.81286 0L0 1.81286L7.18714 9L0 16.1871L1.81286 18L9 10.8129L16.1871 18L18 16.1871L10.8129 9L18 1.81286Z'
+//     fill='white'
+// />

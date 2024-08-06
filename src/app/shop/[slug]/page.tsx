@@ -3,6 +3,10 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { Container } from "@/common/components/skeleton/container";
+import furnitureImage from "@/assets/images/house-luxury-img.png";
+import { AnimatedRoom } from "../components/3d-rendered-room";
+import { ShopDetailType } from "@/common/data/shop-details";
+import { FurnitureDescription } from "../components/furniture-description";
 
 interface ShopDetailsProps {
     params: {
@@ -53,26 +57,49 @@ export default function ShopDetails(props: ShopDetailsProps) {
                     className='z-0 top-0 left-0 w-full h-full absolute object-cover '
                 />
             </div>
-            <ShopDetailsFeatures images={data.images} title={data.title} />
+            <AnimatedRoom />
+            <ShopDetailsFeatures details={data.details} />
+            <div className='flex flex-col md:px-14  gap-y-12 pt-10 md:pt-0 my-0 md:my-20'>
+                <div className='flex text-center md:text-left md:justify-between flex-col md:flex-row px-3'>
+                    <h2 className='md:flex-[0.5] text-[2rem] md:text-[3rem] text-[#161C2D] font-bodoni mb-4 md:mb-0 font-medium'>
+                        A witness to world affairs and continually updated
+                        standards
+                    </h2>
+                    <div className='md:flex-[0.4]'>
+                        <p className='text-sm md:text-base  text-[#161C2D] text-opacity-70 mb-6'>
+                            The Gram furniture has spanned eras without ever
+                            losing its modern touch. Symbolizing this ongoing
+                            connection with time, this is a perfect glimpse into
+                            the world of luxury.
+                        </p>
+                        <button className='border border-[#111] px-10 py-3 text-[#111]  text-sm font-medium  md:w-fit transition duration-200 hover:bg-[#111] hover:text-gray-50'>
+                            Purchase Item
+                        </button>
+                    </div>
+                </div>
+                <div className='h-[18rem] md:h-fit'>
+                    <Image
+                        src={furnitureImage}
+                        alt='Furniture'
+                        className=' md:h-[30.813rem] w-full h-full object-cover'
+                    />
+                </div>
+            </div>
         </div>
     );
 }
 
 interface ShopDetailsFeaturesProps {
-    images: StaticImageData[];
-    title: string;
+    details: ShopDetailType[];
 }
 
 const ShopDetailsFeatures: React.FC<ShopDetailsFeaturesProps> = ({
-    images,
-    title,
+    details,
 }) => {
     return (
         <div className=''>
-            {images.map((item, idx) => (
-                <div className='' key={idx}>
-                    <Image src={item} alt={title} className=' object-cover ' />
-                </div>
+            {details.map((item, idx) => (
+                <FurnitureDescription {...item} key={idx} />
             ))}
         </div>
     );

@@ -11,7 +11,9 @@ export const PortfolioAccordion: React.FC<PortfolioAccordionType> = ({
     const [isActive, setActive] = useState(false);
 
     return (
-        <div className='border-b border-[#11111133] pb-4'>
+        <div
+            className='border-b border-[#11111133] pb-4 cursor-pointer'
+            onClick={() => setActive((prev) => !prev)}>
             <div className='flex justify-between items-center'>
                 <h4 className='flex-1 text-center text-sm md:text-base text-opacity-70 text-[#161C2D]'>
                     Project Details

@@ -4,11 +4,7 @@ import collection1 from "@/assets/images/shop-images/shop-collection/collection-
 import collection2 from "@/assets/images/shop-images/shop-collection/collection-2.png";
 import collection3 from "@/assets/images/shop-images/shop-collection/collection-3.png";
 
-import shopDescription1 from "@/assets/images/shop-images/shop-details/design-description-1.jpg";
-import shopDescription2 from "@/assets/images/shop-images/shop-details/design-description-2.jpg";
-import shopDescription3 from "@/assets/images/shop-images/shop-details/design-description-3.jpg";
-import shopDescription4 from "@/assets/images/shop-images/shop-details/design-description-4.jpg";
-import shopDescription5 from "@/assets/images/shop-images/shop-details/design-description-5.jpg";
+import { shopDetails, ShopDetailType } from "../shop-details";
 
 interface ShopCollectionDetailsType {
     id: number;
@@ -16,7 +12,7 @@ interface ShopCollectionDetailsType {
     title: string;
     description: string;
     banner: StaticImageData;
-    images: StaticImageData[];
+    details: ShopDetailType[];
 }
 
 export const SHOP_COLLECTION_DATA = [
@@ -75,13 +71,7 @@ export const SHOP_COLLECTION_DETAILS: Record<
         description:
             "Obtained frome the finest and rarest leather the gram dining set is a must have for your Living area.",
         banner: collection1,
-        images: [
-            shopDescription1,
-            shopDescription2,
-            shopDescription3,
-            shopDescription4,
-            shopDescription5,
-        ],
+        details: shopDetails,
     },
     "steph-furniture-2": {
         id: 2,
@@ -90,13 +80,7 @@ export const SHOP_COLLECTION_DETAILS: Record<
         description:
             "Obtained frome the finest and rarest leather the gram dining set is a must have for your Living area.",
         banner: collection2,
-        images: [
-            shopDescription1,
-            shopDescription2,
-            shopDescription3,
-            shopDescription4,
-            shopDescription5,
-        ],
+        details: shopDetails,
     },
     "gold-stands-3": {
         id: 3,
@@ -105,12 +89,6 @@ export const SHOP_COLLECTION_DETAILS: Record<
         description:
             "Obtained frome the finest and rarest leather the gram dining set is a must have for your Living area.",
         banner: collection3,
-        images: [
-            shopDescription1,
-            shopDescription2,
-            shopDescription3,
-            shopDescription4,
-            shopDescription5,
-        ],
+        details: shopDetails,
     },
 };

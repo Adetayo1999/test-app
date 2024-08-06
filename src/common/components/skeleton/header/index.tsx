@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { routes } from "@/common/routes";
 import { Container } from "../container";
-import logo from "@/assets/images/white_logo.png";
+import logo from "@/assets/images/logo_white.svg";
 import Image from "next/image";
 import { HamburgerIcon } from "@/assets/icons/hamburger-icon";
 import { MobileNavbar } from "./mobile-navbar";
@@ -21,20 +21,20 @@ export const Header = () => {
     return (
         <header className='relative z-50 w-full bg-[#111111] text-gray-100 py-2 '>
             <Container>
-                <div className='flex justify-between items-center'>
-                    <div className='md:hidden'>
+                <div className='flex md:justify-between justify-center items-center'>
+                    <div className='md:hidden absolute left-4 '>
                         <button
                             className='cursor-pointer'
                             onClick={() => setModalStatus(true)}>
                             <HamburgerIcon scale={0.8} />
                         </button>
                     </div>
-                    <div className='flex-1 md:flex-initial  flex md:block justify-center items-center '>
+                    <div className='flex- md:flex-initial  flex md:block justify-center items-center '>
                         <Link href='/'>
                             <Image
                                 src={logo}
                                 alt='Omoyeni'
-                                className=' h-12 md:h-16'
+                                className='h-12 md:h-fit'
                             />
                         </Link>
                     </div>
