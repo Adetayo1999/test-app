@@ -13,8 +13,8 @@ export const SectionGenerator: React.FC<SectionTypes> = ({
         <div
             className={`flex flex-col gap-8  ${reversed ? "md:flex-row-reverse md:gap-40" : "md:flex-row"}`}>
             <div
-                className={`w-full md:w-1/2 ${textColor ? `text-white -mt-4` : `text-[#000] md:mt-36`}`}>
-                <p className='text-[16px] md:text-2xl font-bodoni px-1'>
+                className={`w-full md:w-1/2 ${textColor ? `text-white -mt-4` : `text-[#2C1001] md:mt-36`}`}>
+                <p className='text-base md:text-2xl font-bodoni px-1'>
                     {subheader}
                 </p>
                 <p
@@ -22,7 +22,7 @@ export const SectionGenerator: React.FC<SectionTypes> = ({
                     {header}
                 </p>
 
-                <p className='text-[14px] md:text-xl mt-6 md:mt-14 w-full md:w-[90%]'>
+                <p className='text-sm md:text-xl mt-6 md:mt-14 w-full md:w-[90%]'>
                     {body}
                 </p>
             </div>

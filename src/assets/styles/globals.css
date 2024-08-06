@@ -15,4 +15,11 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 82.5%;
+}
+
+.shop__image {
+    background-image: url("../images/3d-rendering-loft-luxury-living-room-with-shelf-ne-2023-11-27-05-02-22-utc\ 1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }

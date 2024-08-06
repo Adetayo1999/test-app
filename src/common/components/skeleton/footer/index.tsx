@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Container } from "../container";
-import logo from "@/assets/images/white_logo.png";
+import logo from "@/assets/images/logo_white.svg";
 import { routes } from "@/common/routes";
 import Link from "next/link";
 import {
@@ -21,11 +21,11 @@ export const Footer = () => {
                                 <Image
                                     src={logo}
                                     alt='Omoyeni'
-                                    className='h-10 md:h-fit'
+                                    className='h-14 md:h-fit'
                                 />
                             </div>
                             <div className=''>
-                                <ul className='flex flex-col md:flex-row gap-y-3 md:gap-y-0 text-sm gap-x-8'>
+                                <ul className='flex text-center md:text-left flex-col md:flex-row gap-y-4 md:gap-y-0 text-sm gap-x-8'>
                                     {routes
                                         .filter(
                                             (route) =>

@@ -74,6 +74,15 @@ export const portfolios: PortfolioType[] = [
         id: 5,
         title: "Gram Mercy Park",
         category: "Furniture Redesign",
+        image: portfolioImage2,
+        slug: function () {
+            return `${this.title.toLowerCase().split(" ").join("-")}-${this.id.toString()}`;
+        },
+    },
+    {
+        id: 6,
+        title: "Gram Mercy Park",
+        category: "Furniture Redesign",
         image: portfolioImage5,
         slug: function () {
             return `${this.title.toLowerCase().split(" ").join("-")}-${this.id.toString()}`;
