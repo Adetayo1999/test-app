@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const About = () => (
     <Container>
-        <div className='py-[5.6rem]'>
+        <div className='pt-[3.8rem] pb-[5.6rem]  md:py-[5.6rem]'>
             <div className='flex flex-col-reverse md:flex-row gap-14 md:gap-28 md:mt-20'>
                 <div className='w-full md:w-1/2  space-y-10 md:flex-[0.45] flex-shrink-0'>
                     <p className='tracking-wide leading-loose  md:px-12'>

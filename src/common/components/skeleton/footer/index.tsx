@@ -29,9 +29,7 @@ export const Footer = () => {
                                     {routes
                                         .filter(
                                             (route) =>
-                                                !["/", "/shop"].includes(
-                                                    route.path,
-                                                ),
+                                                !["/"].includes(route.path),
                                         )
                                         .map((route) => (
                                             <li key={route.id}>
