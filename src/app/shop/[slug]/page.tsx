@@ -1,7 +1,7 @@
 import { SHOP_COLLECTION_DETAILS } from "@/common/data/shop-collection";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { Container } from "@/common/components/skeleton/container";
 import furnitureImage from "@/assets/images/house-luxury-img.png";
 import { AnimatedRoom } from "../components/3d-rendered-room";
@@ -72,9 +72,11 @@ export default function ShopDetails(props: ShopDetailsProps) {
                             connection with time, this is a perfect glimpse into
                             the world of luxury.
                         </p>
-                        <button className='border border-[#111] px-10 py-3 text-[#111]  text-sm font-medium  md:w-fit transition duration-200 hover:bg-[#111] hover:text-gray-50'>
+                        <Link
+                            href='/cart'
+                            className='border border-[#111] px-10 py-3 text-[#111]  text-sm font-medium  md:w-fit transition duration-200 hover:bg-[#111] hover:text-gray-50'>
                             Purchase Item
-                        </button>
+                        </Link>
                     </div>
                 </div>
                 <div className='h-[18rem] md:h-fit'>
