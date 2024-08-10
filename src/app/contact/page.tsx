@@ -14,6 +14,7 @@ export default function ContactPage() {
                             src={contactImg}
                             alt='Omoyeni Contact Image'
                             className='h-full w-full object-cover'
+                            placeholder='blur'
                         />
                     </div>
                     <div className='md:flex-[0.45] flex flex-col gap-y-8'>

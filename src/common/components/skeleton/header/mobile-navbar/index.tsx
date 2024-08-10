@@ -46,7 +46,7 @@ export const MobileNavbar: React.FC<ModalNavbarProps> = ({
                 </div>
                 <ul className='flex items-center flex-col gap-y-2  py-6 px-6'>
                     {routes
-                        .filter((item) => item.id !== 6)
+                        // .filter((item) => item.id !== 6)
                         .map(({ path, title, id }) => {
                             return (
                                 <li

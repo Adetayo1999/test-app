@@ -37,6 +37,8 @@ const ImageCarousel: React.FC<SlideTypes> = ({
                         src={slide.image}
                         alt='bg-icon'
                         className='md:w-full h-[600px] md:h-full object-cover relative md:top-3/4 transform -translate-y-1/2'
+                        placeholder='blur'
+                        priority
                     />
                     {isBgTextPresent && (
                         <Image

@@ -55,6 +55,7 @@ export default function ShopDetails(props: ShopDetailsProps) {
                     src={data.banner}
                     alt={data.title}
                     className='z-0 top-0 left-0 w-full h-full absolute object-cover '
+                    placeholder='blur'
                 />
             </div>
             <AnimatedRoom />
@@ -84,6 +85,7 @@ export default function ShopDetails(props: ShopDetailsProps) {
                         src={furnitureImage}
                         alt='Furniture'
                         className=' md:h-[30.813rem] w-full h-full object-cover'
+                        placeholder='blur'
                     />
                 </div>
             </div>

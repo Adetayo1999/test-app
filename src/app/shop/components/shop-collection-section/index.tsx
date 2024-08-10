@@ -32,6 +32,7 @@ export const ShopCollectionSection: React.FC<ShopCollectionSectionProps> = (
                 src={props.image}
                 alt={props.title}
                 className='top-0 left-0 w-full h-full object-cover absolute z-0'
+                placeholder='blur'
             />
             <div className='z-[5] top-0 left-0 w-full h-full absolute ' />
         </div>
