@@ -35,6 +35,7 @@ const About = () => (
                         src={cofounder}
                         className='rounded-xl'
                         alt='cofounder'
+                        placeholder='blur'
                     />
                 </div>
             </div>

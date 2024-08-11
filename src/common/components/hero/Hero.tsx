@@ -14,20 +14,26 @@ export const HeroSection = () => {
                 />
             </div>
 
-            <div className='mb-40 mt-[50vw] md:mt-0 mx-auto grid grid-cols-1 md:grid-cols-3 w-[88%] md:w-[58%] gap-8'>
+            <div className='mb-40 mt-[50vw] md:mt-0 mx-auto flex flex-col items-center md:grid grid-cols-1 md:grid-cols-3 w-[88%] md:w-[58%] md:gap-[2.5rem] gap-y-[2rem]'>
                 {HomeImages.map((item) => (
                     <Link href={item.path} key={item.id}>
-                        <div className='relative transform transition-transform duration-300 ease-in-out md:hover:scale-110'>
+                        <div
+                            className='relative transform transition-transform duration-300 ease-in-out md:hover:scale-110
+                        h-[18.051rem] w-[17.5rem] md:h-[19.34rem] md:w-[18.75rem]
+                        '>
                             <Image
                                 src={item.icon}
-                                className='w-full md:h-full object-cover h-[18rem] cursor-pointer '
+                                className='w-full h-full z-[0] object-cover  cursor-pointer  absolute top-0 left-0'
                                 alt=''
+                                placeholder='blur'
                             />
-                            <h1
-                                className='absolute w-full cursor-pointer font-bodoni text-4xl md:text-5xl 
-                            text-center text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                                {item.title}
-                            </h1>
+                            <div className='relative z-[20] h-full w-full  flex justify-center items-center p-5'>
+                                <h1
+                                    className='cursor-pointer font-bodoni text-4xl md:text-5xl 
+                            text-center text-white'>
+                                    {item.title}
+                                </h1>
+                            </div>
                         </div>
                     </Link>
                 ))}

@@ -35,6 +35,7 @@ export const FurnitureDescription: React.FC<FurnitureDescriptionProps> = ({
                                 src={image}
                                 alt='Furniture description'
                                 className='w-full h-full object-cover'
+                                placeholder='blur'
                             />
                         </div>
                     </div>
@@ -50,6 +51,7 @@ export const FurnitureDescription: React.FC<FurnitureDescriptionProps> = ({
                                 src={image}
                                 alt='Furniture description'
                                 className='w-full h-full object-cover'
+                                placeholder='blur'
                             />
                         </div>
                         <div className=''>
