@@ -56,7 +56,7 @@ export const Header = () => {
                     <div className='hidden md:block'>
                         <button
                             className='text-sm px-8 py-3 border rounded border-white border-opacity-50 font-medium transition duration-200 hover:bg-white hover:text-[#111111]'
-                            onClick={() => router.push("/contact")}>
+                            onClick={() => router.push("/cart")}>
                             Contact
                         </button>
                     </div>

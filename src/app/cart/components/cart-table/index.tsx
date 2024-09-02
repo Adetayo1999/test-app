@@ -6,13 +6,17 @@ import Image from "next/image";
 import { useMemo } from "react";
 import inputStyle from "@/assets/styles/input.module.css";
 import { useRouter } from "next/navigation";
+import { useCartStore } from "@/store/cart";
+import { formatCurrency } from "@/utils/currency";
 
 export const CartTable = () => {
     const router = useRouter();
+    const { cart, descreaseQuantity, increaseQuantity, removeFromCart } =
+        useCartStore();
 
     const data = useMemo(
         () =>
-            TABLE_DATA.map((item) => ({
+            cart.map((item) => ({
                 product: (
                     <div className='flex gap-x-3 items-center'>
                         <div className='w-[4.5rem] h-[4.5rem] rounded overflow-hidden'>
@@ -27,36 +31,46 @@ export const CartTable = () => {
                 ),
                 processing_time: (
                     <div className=''>
-                        <p>{item.processing_time}</p>
+                        <p>12 Weeks</p>
                     </div>
                 ),
-                price: <p className='font-medium'>${item.price}</p>,
+                price: (
+                    <p className='font-medium'>{formatCurrency(item.amount)}</p>
+                ),
                 quantity: (
                     <div className='flex gap-x-2 items-center'>
-                        <button className='w-7 h-7 rounded-full bg-[#E7E9ED] flex justify-center items-center text-[#161C2D] font-semibold '>
+                        <button
+                            className='w-7 h-7 rounded-full bg-[#E7E9ED] flex justify-center items-center text-[#161C2D] font-semibold'
+                            onClick={() => descreaseQuantity(item.id)}>
                             -
                         </button>
                         <input
                             type='number'
                             name='quantity'
                             className={`${inputStyle.no_spinners} h-8 w-12 border border-[#D5D7DD] rounded p-2 outline-none`}
+                            value={item.quantity}
+                            disabled
                         />
-                        <button className='w-7 h-7 rounded-full bg-[#E7E9ED] flex justify-center items-center text-[#161C2D] font-semibold '>
+                        <button
+                            className='w-7 h-7 rounded-full bg-[#E7E9ED] flex justify-center items-center text-[#161C2D] font-semibold'
+                            onClick={() => increaseQuantity(item.id)}>
                             +
                         </button>
                     </div>
                 ),
                 total: (
-                    <p className='font-medium'>${item.price * item.quantity}</p>
+                    <p className='font-medium'>
+                        {formatCurrency(item.amount * item.quantity)}
+                    </p>
                 ),
                 action: (
-                    <button>
+                    <button onClick={() => removeFromCart(item.id)}>
                         <LiaTimesSolid className='text-lg text-[#81838C]' />
                     </button>
                 ),
             })),
 
-        [],
+        [cart, increaseQuantity, descreaseQuantity, removeFromCart],
     );
 
     return (
@@ -65,11 +79,13 @@ export const CartTable = () => {
                 <Table columns={TABLE_HEADER} data={data} />
             </div>
             <div className='flex justify-center'>
-                <button
-                    className=' w-full px-6 rounded md:w-[40%] text-sm border-[#111111] py-3 border text-[#111111] font-medium transition duration-300 hover:bg-[#111] hover:text-gray-50'
-                    onClick={() => router.push("/checkout")}>
-                    Proceed to checkout
-                </button>
+                {cart.length > 0 ? (
+                    <button
+                        className=' w-full px-6 rounded md:w-[40%] text-sm border-[#111111] py-3 border text-[#111111] font-medium transition duration-300 hover:bg-[#111] hover:text-gray-50'
+                        onClick={() => router.push("/checkout")}>
+                        Proceed to checkout
+                    </button>
+                ) : null}
             </div>
         </div>
     );

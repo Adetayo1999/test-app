@@ -3,6 +3,7 @@ import "@/assets/styles/globals.css";
 import { gordita, bodoni } from "@/assets/fonts";
 import { Header } from "@/common/components/skeleton/header";
 import { Footer } from "@/common/components/skeleton/footer";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
     title: "Omoyeni Website",
@@ -18,6 +19,7 @@ export default function RootLayout({
         <html lang='en'>
             <body
                 className={`${gordita.variable} ${bodoni.variable} font-gordita`}>
+                <Toaster position='top-right' />
                 <Header />
                 {children}
                 <Footer />

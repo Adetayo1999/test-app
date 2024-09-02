@@ -1,4 +1,3 @@
-import { SHOP_COLLECTION_DETAILS } from "@/common/data/shop-collection";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,6 +6,8 @@ import furnitureImage from "@/assets/images/house-luxury-img.png";
 import { AnimatedRoom } from "../components/3d-rendered-room";
 import { ShopDetailType } from "@/common/data/shop-details";
 import { FurnitureDescription } from "../components/furniture-description";
+import { ProductType } from "@/app/types/products";
+import { PurchaseItemButton } from "../components/purchase-item-button";
 
 interface ShopDetailsProps {
     params: {
@@ -17,12 +18,12 @@ interface ShopDetailsProps {
     };
 }
 
-export default function ShopDetails(props: ShopDetailsProps) {
-    const data = SHOP_COLLECTION_DETAILS[props.params.slug];
-
-    if (!data) {
-        return null;
-    }
+export default async function ShopDetails(props: ShopDetailsProps) {
+    const productsResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL!}/api/products/${props.params.slug}`,
+    );
+    const productsData = await productsResponse.json();
+    const data: ProductType = productsData.data.product;
 
     return (
         <div className=''>
@@ -50,16 +51,21 @@ export default function ShopDetails(props: ShopDetailsProps) {
                     <h1 className='text-white font-bodoni font-medium text-3xl md:text-5xl'>
                         {data.title}
                     </h1>
+                    <div className='mt-6'>
+                        <PurchaseItemButton data={data} variant />
+                    </div>
                 </Container>
                 <Image
                     src={data.banner}
                     alt={data.title}
                     className='z-0 top-0 left-0 w-full h-full absolute object-cover '
-                    placeholder='blur'
+                    // TODO: find perfect size for image
+                    width={500}
+                    height={400}
                 />
             </div>
             <AnimatedRoom />
-            <ShopDetailsFeatures details={data.details} />
+            <ShopDetailsFeatures details={data.descriptions} />
             <div className='flex flex-col md:px-14  gap-y-12 pt-10 md:pt-0 my-0 md:my-20'>
                 <div className='flex text-center md:text-left md:justify-between flex-col md:flex-row px-3'>
                     <h2 className='md:flex-[0.5] text-[2rem] md:text-[3rem] text-[#161C2D] font-bodoni mb-4 md:mb-0 font-medium'>
@@ -73,11 +79,7 @@ export default function ShopDetails(props: ShopDetailsProps) {
                             connection with time, this is a perfect glimpse into
                             the world of luxury.
                         </p>
-                        <Link
-                            href='/cart'
-                            className='border border-[#111] px-10 py-3 text-[#111]  text-sm font-medium  md:w-fit transition duration-200 hover:bg-[#111] hover:text-gray-50'>
-                            Purchase Item
-                        </Link>
+                        <PurchaseItemButton data={data} />
                     </div>
                 </div>
                 <div className='h-[18rem] md:h-fit'>

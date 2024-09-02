@@ -1,0 +1,139 @@
+{
+    "products": {
+        "gram-furniture-1": {
+            "id": 1,
+            "title": "Gram Furniture",
+            "subtitle": "Limited Edition",
+            "description": "Obtained frome the finest and rarest leather the gram dining set is a must have for your Living area.",
+            "slug": "gram-furniture-1",
+            "banner": "https://i.ibb.co/9bdQJP6/collection-1.png",
+            "descriptions": [
+                {
+                    "title": "Indoor Use Only",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces, with the flexibility to add additional furniture and pieces. Easily finalize your selections and have everything shipped directly to your home, simplifying the process of transforming your space.",
+                    "type": "left_aligned",
+                    "color": "#7D9182",
+                    "image": "https://i.ibb.co/sVxFhwR/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2.png"
+                },
+                {
+                    "title": "Ships Assembled",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces, with the flexibility to add additional furniture and pieces. Easily finalize your selections and have everything shipped directly to your home, simplifying the process of transforming your space.",
+                    "type": "left_aligned",
+                    "color": "#BDA0A2",
+                    "image": "https://i.ibb.co/Hhp3msY/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-1.png"
+                },
+                {
+                    "title": "Hand Crafted In Kenya",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces",
+                    "type": "centered",
+                    "color": "#D2C28A",
+                    "image": "https://i.ibb.co/cJXBYTk/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-2.png"
+                },
+                {
+                    "title": "Quality Materials",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces",
+                    "type": "centered",
+                    "color": "#A6C3CB",
+                    "image": "https://i.ibb.co/WGDgKgJ/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-3.png"
+                },
+                {
+                    "title": "24/7 Support",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces, ",
+                    "type": "centered",
+                    "color": "#BC7A62",
+                    "image": "https://i.ibb.co/JQ1L0Q6/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-4.png"
+                }
+            ]
+        },
+        "steph-furniture-2": {
+            "id": 2,
+            "title": "Steph Furniture",
+            "subtitle": "Limited Edition",
+            "description": "Obtained frome the finest and rarest leather the gram dining set is a must have for your Living area.",
+            "slug": "steph-furniture-2",
+            "banner": "https://i.ibb.co/VpHKr7b/collection-2.png",
+            "descriptions": [
+                {
+                    "title": "Indoor Use Only",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces, with the flexibility to add additional furniture and pieces. Easily finalize your selections and have everything shipped directly to your home, simplifying the process of transforming your space.",
+                    "type": "left_aligned",
+                    "color": "#7D9182",
+                    "image": "https://i.ibb.co/Hhp3msY/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-1.png"
+                },
+                {
+                    "title": "Ships Assembled",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces, with the flexibility to add additional furniture and pieces. Easily finalize your selections and have everything shipped directly to your home, simplifying the process of transforming your space.",
+                    "type": "left_aligned",
+                    "color": "#BDA0A2",
+                    "image": "https://i.ibb.co/cJXBYTk/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-2.png"
+                },
+                {
+                    "title": "Hand Crafted In Kenya",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces",
+                    "type": "centered",
+                    "color": "#D2C28A",
+                    "image": "https://i.ibb.co/WGDgKgJ/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-3.png"
+                },
+                {
+                    "title": "Quality Materials",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces",
+                    "type": "centered",
+                    "color": "#A6C3CB",
+                    "image": "https://i.ibb.co/JQ1L0Q6/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-4.png"
+                },
+                {
+                    "title": "24/7 Support",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces, ",
+                    "type": "centered",
+                    "color": "#BC7A62",
+                    "image": "https://i.ibb.co/sVxFhwR/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2.png"
+                }
+            ]
+        },
+        "gold-stands-3": {
+            "id": 3,
+            "title": "Gold Stands",
+            "subtitle": "Limited Edition",
+            "description": "Obtained frome the finest and rarest leather the gram dining set is a must have for your Living area.",
+            "slug": "gold-stands-3",
+            "banner": "https://i.ibb.co/8g0HfCF/collection-3.png",
+            "descriptions": [
+                {
+                    "title": "Indoor Use Only",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces, with the flexibility to add additional furniture and pieces. Easily finalize your selections and have everything shipped directly to your home, simplifying the process of transforming your space.",
+                    "type": "left_aligned",
+                    "color": "#7D9182",
+                    "image": "https://i.ibb.co/Hhp3msY/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-1.png"
+                },
+                {
+                    "title": "Ships Assembled",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces, with the flexibility to add additional furniture and pieces. Easily finalize your selections and have everything shipped directly to your home, simplifying the process of transforming your space.",
+                    "type": "left_aligned",
+                    "color": "#BDA0A2",
+                    "image": "https://i.ibb.co/cJXBYTk/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-2.png"
+                },
+                {
+                    "title": "Hand Crafted In Kenya",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces",
+                    "type": "centered",
+                    "color": "#D2C28A",
+                    "image": "https://i.ibb.co/WGDgKgJ/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-3.png"
+                },
+                {
+                    "title": "Quality Materials",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces",
+                    "type": "centered",
+                    "color": "#A6C3CB",
+                    "image": "https://i.ibb.co/JQ1L0Q6/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2-4.png"
+                },
+                {
+                    "title": "24/7 Support",
+                    "description": "Experience the future of interior design as our AI creates tailored recommendations from real market options. Select from three variations of furnished and decorated spaces, ",
+                    "type": "centered",
+                    "color": "#BC7A62",
+                    "image": "https://i.ibb.co/sVxFhwR/loft-luxury-living-room-with-bookshelf-and-yellow-2023-11-27-05-23-24-utc-2.png"
+                }
+            ]
+        }
+    }
+}
