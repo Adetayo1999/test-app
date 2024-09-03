@@ -23,6 +23,8 @@ export const CartTable = () => {
                             <Image
                                 alt={item.title}
                                 src={item.image}
+                                width={72}
+                                height={72}
                                 className='w-full h-full object-cover'
                             />
                         </div>
@@ -75,8 +77,29 @@ export const CartTable = () => {
 
     return (
         <div className=''>
-            <div className=''>
+            <div className='min-h-[20rem] flex flex-col gap-y-5'>
                 <Table columns={TABLE_HEADER} data={data} />
+                {cart.length > 0 ? (
+                    <div className='flex justify-end items-center'>
+                        <div className='w-[20%] pt-5 border-t-[#11111133] border-t'>
+                            <p className='text-sm text-[#111111] flex gap-x-4 items-center'>
+                                <span>TOTAL:</span>
+                                <span className='  font-medium'>
+                                    {formatCurrency(
+                                        cart
+                                            .map(
+                                                (item) =>
+                                                    item.quantity * item.amount,
+                                            )
+                                            .reduce(
+                                                (prev, curr) => curr + prev,
+                                            ),
+                                    )}
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                ) : null}
             </div>
             <div className='flex justify-center'>
                 {cart.length > 0 ? (

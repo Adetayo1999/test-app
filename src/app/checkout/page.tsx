@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { Container } from "@/common/components/skeleton/container";
 import Link from "next/link";
 import { MdKeyboardArrowLeft } from "react-icons/md";
@@ -7,15 +8,17 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe, StripeElementsOptions } from "@stripe/stripe-js";
 import { useCartStore } from "@/store/cart";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const stripePromise = loadStripe(
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
 );
 
 export default function Checkout() {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [clientSecret, setClientSecret] = useState();
     const { cart } = useCartStore();
+    const router = useRouter();
 
     const options: StripeElementsOptions = {
         clientSecret,
@@ -42,24 +45,29 @@ export default function Checkout() {
                     setClientSecret(data.data.client_secret);
                 }
             } catch (error) {
+                toast.error("Something went wrong try again");
+                router.push("/cart");
             } finally {
                 setLoading(false);
             }
         })();
-    }, [cart, clientSecret]);
+    }, [cart, clientSecret, router]);
 
-    if (cart.length === 0) {
-        return (
-            <Container className='pt-[2rem] md:pt-[2.813rem] pb-20 min-h-screen'>
-                <div className=''>Cart Is Empty</div>
-            </Container>
-        );
-    }
+    useEffect(() => {
+        if (!loading && !clientSecret) router.push("/");
+    }, [loading, clientSecret, router]);
+
+    useEffect(() => {
+        if (cart.length === 0) router.push("/");
+    }, [cart.length, router]);
 
     if (!clientSecret || loading) {
         return (
-            <Container className='pt-[2rem] md:pt-[2.813rem] pb-20 min-h-screen'>
-                <div className=''>Loading...</div>
+            <Container className='pt-[2rem] flex justify-center items-center md:pt-[2.813rem] pb-20 min-h-[60vh]'>
+                <div className='flex gap-y-2 items-center text-center justify-center flex-col'>
+                    <div className=' h-[2.5rem] w-[2.5rem] animate-spin rounded-full  border-black border-t-transparent border-2 ' />
+                    <p className='text-sm animate-pulse'>Loading checkout...</p>
+                </div>
             </Container>
         );
     }

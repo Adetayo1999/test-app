@@ -13,6 +13,7 @@ export const CheckoutForm = () => {
     const elements = useElements();
     const [, setError] = useState<string>();
     const { clearCart } = useCartStore();
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -22,20 +23,26 @@ export const CheckoutForm = () => {
             // Make sure to disable form submission until Stripe.js has loaded.
             return;
         }
-        const { error } = await stripe.confirmPayment({
-            //`Elements` instance that was used to create the Payment Element
-            elements,
-            confirmParams: {
-                return_url:
-                    "http://localhost:3000/api/checkout/payment-verification",
-            },
-        });
 
-        if (error) {
-            toast.error(error.message || "Something went wrong, try again");
-            setError(error.message);
-        } else {
-            clearCart();
+        try {
+            setLoading(true);
+            const { error } = await stripe.confirmPayment({
+                //`Elements` instance that was used to create the Payment Element
+                elements,
+                confirmParams: {
+                    return_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/checkout/payment-verification`,
+                },
+            });
+
+            if (error) {
+                toast.error(error.message || "Something went wrong, try again");
+                setError(error.message);
+            } else {
+                clearCart();
+            }
+        } catch (err) {
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -60,8 +67,13 @@ export const CheckoutForm = () => {
             />
             <PaymentElement />
             <div className='flex justify-center'>
-                <button className=' w-full px-6 rounded md:w-[40%] text-sm border-[#111111] py-3 border text-[#111111] font-medium transition duration-300 hover:bg-[#111] hover:text-gray-50 '>
-                    Pay Now
+                <button
+                    className=' w-full px-6 rounded md:w-[40%] text-sm border-[#111111] py-3 border text-[#111111] font-medium flex justify-center gap-x-3 items-center transition duration-300 hover:bg-[#111] hover:text-gray-50 disabled:opacity-40 disabled:cursor-not-allowed '
+                    disabled={loading}>
+                    {loading && (
+                        <span className='h-[0.8rem] w-[0.8rem] rounded-full animate-spin border border-black border-t-transparent' />
+                    )}
+                    <span>Pay Now</span>
                 </button>
             </div>
         </form>

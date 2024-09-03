@@ -17,7 +17,7 @@ export const ShopCollectionSection: React.FC<
                 </p>
                 <Link
                     href={`/shop/${props.slug}`}
-                    className='border border-white rounded px-8 py-3 text-white text-xs md:text-sm font-medium  md:w-fit'>
+                    className='border border-white rounded px-8 py-3 text-white text-xs md:text-sm font-medium  md:w-fit transition duration-300 hover:bg-gray-50 hover:text-[#111] '>
                     Learn More
                 </Link>
             </Container>
