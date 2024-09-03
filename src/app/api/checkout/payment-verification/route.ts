@@ -5,8 +5,8 @@ const CLIENT_URL = process.env.CLIENT_URL as string;
 const stripe = new Stripe(process.env.STRIPE_API_KEY as string);
 
 export async function GET(request: NextRequest) {
+    const searchParams = request.nextUrl.searchParams;
     try {
-        const searchParams = request.nextUrl.searchParams;
         const payment_intent = searchParams.get("payment_intent");
         const paymentIntentClientSecret = searchParams.get(
             "payment_intent_client_secret",
