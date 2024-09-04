@@ -1,15 +1,10 @@
-"use client";
-
 import aiinitiative from "@/assets/images/mainaiinitiative.png";
 import Image from "next/image";
 import { AIInitiativeData } from "@/common/data/aiinitiative";
-import { InputField } from "@/common/components/input";
-import { SetStateAction, useState } from "react";
-import { Buttons } from "@/common/components/buttons";
 import { SectionGenerator } from "@/common/components/aiinitiative-section";
+import { AiInitiativeForm } from "@/common/components/ai-initiative-form";
 
 const AIInitiative = () => {
-    const [email, setEmail] = useState("");
     const { step1, step2, step3 } = AIInitiativeData;
     return (
         <div className='py-[5.6rem]'>
@@ -24,22 +19,10 @@ const AIInitiative = () => {
                     professional tools that can provide recommendations tailored
                     to your needs !
                 </p>
-
-                <div className='m-auto w-[90%] md:w-1/3 flex justify-center mt-12 gap-4'>
-                    <div className='w-[50rem] md:w-full'>
-                        <InputField
-                            placeholder={"Enter email"}
-                            onChange={(e: {
-                                target: { value: SetStateAction<string> };
-                            }) => setEmail(e.target.value)}
-                            value={email}
-                        />
-                    </div>
-                    <Buttons
-                        title={"Join waitlist"}
-                        className='bg-[#000] text-white rounded-none hover:bg-[#fff] hover:text-black'
-                    />
-                </div>
+                <AiInitiativeForm
+                    containerClassName='m-auto w-[90%] md:w-1/3 flex justify-center mt-12 gap-4'
+                    inputContainerClassName='w-[50rem] md:w-full'
+                />
             </div>
 
             <Image src={aiinitiative} alt='images' className=' w-full' />
@@ -86,22 +69,10 @@ const AIInitiative = () => {
                         Ready to elevate your lifestyle with stylish decor?
                     </h1>
                 </div>
-                <div className='m-auto w-full md:w-1/3 flex flex-col md:flex-row justify-center mt-10 md:mt-12 gap-4'>
-                    <div className=' md:w-full'>
-                        <InputField
-                            placeholder={"Enter email"}
-                            onChange={(e: {
-                                target: { value: SetStateAction<string> };
-                            }) => setEmail(e.target.value)}
-                            value={email}
-                        />
-                    </div>
-
-                    <Buttons
-                        title={"Join waitlist"}
-                        className='bg-[#000] text-white rounded-none hover:bg-[#fff] hover:text-black'
-                    />
-                </div>
+                <AiInitiativeForm
+                    containerClassName='m-auto w-full md:w-1/3 flex flex-col md:flex-row justify-center mt-10 md:mt-12 gap-4'
+                    inputContainerClassName='md:w-full'
+                />
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import {
     PinterestIcon,
     XIcon,
 } from "../../../../assets/icons";
+import { SubscribeForm } from "../../subscribe-form";
 
 export const Footer = () => {
     return (
@@ -46,17 +47,7 @@ export const Footer = () => {
                                 Sign up with your email address to receive news
                                 and updates
                             </h5>
-                            <form className='flex flex-col gap-y-2 md:gap-y-0 md:flex-row gap-x-3 items-center'>
-                                <input
-                                    type='email'
-                                    name='email'
-                                    placeholder='Enter your email'
-                                    className='md:flex-[0.7] px-2 py-2 text-sm w-full md:w-fit '
-                                />
-                                <button className='w-full md:w-fit md:flex-[0.3] text-sm py-2 border border-white border-opacity-50 rounded font-medium transition duration-300 hover:bg-gray-50 hover:text-[#111] '>
-                                    Subscribe
-                                </button>
-                            </form>
+                            <SubscribeForm />
                         </div>
                     </div>
                     <div className='mt-8 flex-col-reverse md:flex-row flex justify-between items-center gap-y-4 md:gap-y-0 '>

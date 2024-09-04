@@ -3,7 +3,7 @@ import { ShopBanner } from "./components/shop-banner";
 import { ShopCollection } from "./components/shop-collection";
 
 interface ShopPageProps {
-    searchParams: {
+    searchParams?: {
         [key: string]: string;
     };
 }
@@ -21,7 +21,7 @@ export default async function Shop(params: ShopPageProps) {
             <ShopBanner />
             <ShopCollection
                 products={products}
-                collection={params.searchParams.collection}
+                collection={params?.searchParams?.collection}
             />
         </div>
     );
