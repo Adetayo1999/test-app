@@ -1,6 +1,5 @@
 import contactImg from "@/assets/images/contact-images/contact-hero.png";
-import { Input } from "@/common/components/forms/input";
-import { Textarea } from "@/common/components/forms/textarea";
+import { ContactForm } from "@/common/components/contact-form";
 import { Container } from "@/common/components/skeleton/container";
 import Image from "next/image";
 
@@ -29,40 +28,7 @@ export default function ContactPage() {
                             </p>
                         </div>
                         <div className=''>
-                            <form className='flex flex-col gap-y-6'>
-                                <div className='grid grid-cols-1 md:grid-cols-2  gap-y-6 md:gap-y-0 gap-x-5'>
-                                    <div className=''>
-                                        <Input
-                                            labelText='First name'
-                                            placeholder='First Name'
-                                        />
-                                    </div>
-                                    <div className=''>
-                                        <Input
-                                            labelText='Last name'
-                                            placeholder='Last name'
-                                        />
-                                    </div>
-                                </div>
-                                <Input
-                                    labelText='Email'
-                                    type='email'
-                                    placeholder='jondoe@gmail.com'
-                                />
-                                <Input
-                                    labelText='Subject'
-                                    placeholder='e.g Living room redesign'
-                                />
-                                <Textarea
-                                    labelText='Message'
-                                    placeholder='Leave us a message...'
-                                />
-                                <div className=''>
-                                    <button className='border border-[#111] px-8 py-3 text-[#111] text-sm font-medium w-full md:w-fit transition duration-200 hover:bg-[#111] hover:text-gray-50'>
-                                        Submit
-                                    </button>
-                                </div>
-                            </form>
+                            <ContactForm />
                         </div>
                     </div>
                 </div>
