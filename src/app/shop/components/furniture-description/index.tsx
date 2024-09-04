@@ -30,14 +30,12 @@ export const FurnitureDescription: React.FC<FurnitureDescriptionProps> = ({
                         </p>
                     </div>
                     <div className='flex justify-center'>
-                        <div className='w-full md:w-[50rem] mx-10 md:h-[32.688rem] overflow-hidden'>
+                        <div className='relative w-full md:w-[50rem] mx-10 md:h-[32.688rem] overflow-hidden'>
                             <Image
                                 src={image}
                                 alt='Furniture description'
                                 className='w-full h-full object-cover'
-                                // TODO: find perfect size for image
-                                width={500}
-                                height={400}
+                                fill
                             />
                         </div>
                     </div>
@@ -48,14 +46,12 @@ export const FurnitureDescription: React.FC<FurnitureDescriptionProps> = ({
             return (
                 <div className='md:min-h-screen' style={{ background: color }}>
                     <div className='flex flex-col justify-center items-center pt-20 px-10  md:pt-40 md:px-40 pb-16    mx-auto '>
-                        <div className='w-full md:w-[50rem] md:h-[32.688rem]  overflow-hidden mb-8'>
+                        <div className='relative w-full md:w-[50rem] md:h-[32.688rem]  overflow-hidden mb-8'>
                             <Image
                                 src={image}
                                 alt='Furniture description'
                                 className='w-full h-full object-cover'
-                                // TODO: find perfect size for image
-                                width={500}
-                                height={400}
+                                fill
                             />
                         </div>
                         <div className='md:w-[50rem]'>
