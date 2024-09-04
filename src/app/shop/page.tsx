@@ -9,17 +9,12 @@ interface ShopPageProps {
 }
 
 export default async function Shop(params: ShopPageProps) {
-    let products: Omit<ProductType, "descriptions">[] = [];
-    try {
-        const productsResponse = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL!}/api/products`,
-        );
-        const productsData = await productsResponse.json();
-        products = productsData.data.products || [];
-    } catch (e) {
-        console.log(e);
-        products = [];
-    }
+    const productsResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL!}/api/products`,
+    );
+    const productsData = await productsResponse.json();
+    const products: Omit<ProductType, "descriptions">[] =
+        productsData?.data?.products || [];
 
     return (
         <div className=''>

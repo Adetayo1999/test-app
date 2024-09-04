@@ -3,17 +3,20 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Buttons } from "../buttons";
 import { InputField } from "../input";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 export const AiInitiativeForm: React.FC<{
     containerClassName: string;
     inputContainerClassName: string;
 }> = ({ containerClassName, inputContainerClassName }) => {
     const { register, handleSubmit, reset } = useForm<{ email: string }>();
+    const [loading, setLoading] = useState(false);
 
     const handleAiInitiativeSubmit: SubmitHandler<{ email: string }> = async (
         data,
     ) => {
         try {
+            setLoading(true);
             const response = await fetch("/api/waitlist", {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -35,6 +38,8 @@ export const AiInitiativeForm: React.FC<{
             if (error instanceof Error) {
                 toast.error(error.message);
             } else toast.error("something went wrong try again");
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -52,6 +57,7 @@ export const AiInitiativeForm: React.FC<{
             <Buttons
                 title={"Join waitlist"}
                 className='bg-[#000] text-white rounded-none hover:bg-[#fff] hover:text-black'
+                loading={loading}
             />
         </form>
     );
