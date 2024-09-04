@@ -6,6 +6,10 @@ const nextConfig = {
                 hostname: "i.ibb.co",
                 protocol: "https",
             },
+            {
+                hostname: "res.cloudinary.com",
+                protocol: "https",
+            },
         ],
     },
 };

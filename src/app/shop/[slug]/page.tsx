@@ -59,9 +59,7 @@ export default async function ShopDetails(props: ShopDetailsProps) {
                     src={data.banner}
                     alt={data.title}
                     className='z-0 top-0 left-0 w-full h-full absolute object-cover '
-                    // TODO: find perfect size for image
-                    width={500}
-                    height={400}
+                    fill
                 />
             </div>
             <AnimatedRoom />
