@@ -25,8 +25,7 @@ export const ShopCollectionSection: React.FC<
                 src={props.banner}
                 alt={props.title}
                 className='top-0 left-0 w-full h-full object-cover absolute z-0'
-                width={500}
-                height={400}
+                fill
             />
             <div className='z-[5] top-0 left-0 w-full h-full absolute ' />
         </div>
