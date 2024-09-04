@@ -1,0 +1,21 @@
+# netlify.toml
+[build]
+  # The build command that Next.js uses to build the app
+  command = "npm run build"
+  # The directory where Next.js outputs the static files
+  publish = ".next"
+
+
+# Settings to handle redirects
+[[redirects]]
+  # Redirect all routes to Next.js for handling
+  from = "/*"
+  to = "/"
+  status = 200
+
+
+# Settings for caching images (optional but recommended for optimization)
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
