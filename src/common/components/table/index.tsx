@@ -28,7 +28,7 @@ export function Table({ columns, data, loading }: TableProps) {
     }
 
     return (
-        <div className='min-h-[20rem] relative'>
+        <div className=' relative'>
             <div className={`overflow-x-auto ${scrollbar.no_scrollbar}`}>
                 <table
                     {...getTableProps()}

@@ -35,7 +35,9 @@ export const FurnitureDescription: React.FC<FurnitureDescriptionProps> = ({
                                 src={image}
                                 alt='Furniture description'
                                 className='w-full h-full object-cover'
-                                placeholder='blur'
+                                // TODO: find perfect size for image
+                                width={500}
+                                height={400}
                             />
                         </div>
                     </div>
@@ -51,7 +53,9 @@ export const FurnitureDescription: React.FC<FurnitureDescriptionProps> = ({
                                 src={image}
                                 alt='Furniture description'
                                 className='w-full h-full object-cover'
-                                placeholder='blur'
+                                // TODO: find perfect size for image
+                                width={500}
+                                height={400}
                             />
                         </div>
                         <div className='md:w-[50rem]'>

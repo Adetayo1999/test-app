@@ -1,13 +1,15 @@
-import { SHOP_COLLECTION_DATA } from "@/common/data/shop-collection";
 import Link from "next/link";
 import { ShopCollectionSection } from "../shop-collection-section";
+import { ProductType } from "@/app/types/products";
 
 interface ShopCollectionProps {
     collection?: string;
+    products: Omit<ProductType, "descriptions">[];
 }
 
 export const ShopCollection: React.FC<ShopCollectionProps> = ({
     collection,
+    products,
 }) => {
     const collectionType = collection || "all";
 
@@ -51,7 +53,7 @@ export const ShopCollection: React.FC<ShopCollectionProps> = ({
                 </div>
             </div>
             <div className=''>
-                {SHOP_COLLECTION_DATA.map((i) => (
+                {products.map((i) => (
                     <ShopCollectionSection key={i.id} {...i} />
                 ))}
             </div>
