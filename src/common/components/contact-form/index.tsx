@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Input } from "../forms/input";
 import { Textarea } from "../forms/textarea";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 interface ContactFormType {
     first_name: string;
@@ -19,11 +20,13 @@ export const ContactForm = () => {
         formState: { errors },
         reset,
     } = useForm<ContactFormType>();
+    const [loading, setLoading] = useState(false);
 
     const handleContactFormSubmit: SubmitHandler<ContactFormType> = async (
         data,
     ) => {
         try {
+            setLoading(true);
             const response = await fetch("/api/contact", {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -45,6 +48,8 @@ export const ContactForm = () => {
             if (error instanceof Error) {
                 toast.error(error.message);
             } else toast.error("something went wrong try again");
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -90,8 +95,13 @@ export const ContactForm = () => {
                 error={errors.message}
             />
             <div className=''>
-                <button className='border border-[#111] px-8 py-3 text-[#111] text-sm font-medium w-full md:w-fit transition duration-200 hover:bg-[#111] hover:text-gray-50'>
-                    Submit
+                <button
+                    className='border border-[#111] px-8 py-3 text-[#111] text-sm font-medium w-full md:w-fit transition duration-200 hover:bg-[#111] hover:text-gray-50 flex justify-center gap-x-3 items-center disabled:opacity-40 disabled:cursor-not-allowed'
+                    disabled={loading}>
+                    {loading && (
+                        <span className='h-[0.8rem] w-[0.8rem] rounded-full animate-spin border border-black border-t-transparent' />
+                    )}
+                    <span>Submit</span>
                 </button>
             </div>
         </form>
