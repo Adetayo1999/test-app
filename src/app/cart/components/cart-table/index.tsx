@@ -1,7 +1,7 @@
 "use client";
 import { LiaTimesSolid } from "react-icons/lia";
 import { Table } from "@/common/components/table";
-import { TABLE_DATA, TABLE_HEADER } from "@/common/data/cart-data";
+import { TABLE_HEADER } from "@/common/data/cart-data";
 import Image from "next/image";
 import { useMemo } from "react";
 import inputStyle from "@/assets/styles/input.module.css";
