@@ -8,6 +8,16 @@ import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
     title: "AI-powered interior design platform",
     description: "Transform Your Space with AI-Powered Interior Design",
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
+    openGraph: {
+        title: "AI-powered interior design platform",
+        description: "Transform Your Space with AI-Powered Interior Design",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "AI-powered interior design platform",
+        description: "Transform Your Space with AI-Powered Interior Design",
+    },
 };
 
 export default function RootLayout({
