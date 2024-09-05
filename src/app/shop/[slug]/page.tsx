@@ -1,10 +1,9 @@
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Container } from "@/common/components/skeleton/container";
 import furnitureImage from "@/assets/images/house-luxury-img.png";
 import { AnimatedRoom } from "../components/3d-rendered-room";
-import { ShopDetailType } from "@/common/data/shop-details";
 import { FurnitureDescription } from "../components/furniture-description";
 import { ProductType } from "@/app/types/products";
 import { PurchaseItemButton } from "../components/purchase-item-button";
@@ -91,6 +90,14 @@ export default async function ShopDetails(props: ShopDetailsProps) {
             </div>
         </div>
     );
+}
+
+interface ShopDetailType {
+    title: string;
+    description: string;
+    image: StaticImageData | string;
+    color: string;
+    type: "centered" | "left_aligned";
 }
 
 interface ShopDetailsFeaturesProps {

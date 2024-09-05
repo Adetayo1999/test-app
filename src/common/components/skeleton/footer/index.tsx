@@ -69,14 +69,31 @@ export const Footer = () => {
                         <div className=''>
                             <ul className='flex gap-x-6 items-center'>
                                 {[
-                                    MailIcon,
-                                    InstagramIcon,
-                                    XIcon,
-                                    PinterestIcon,
-                                ].map((Icon, idx) => (
+                                    {
+                                        id: 1,
+                                        Icon: MailIcon,
+                                    },
+                                    {
+                                        id: 2,
+                                        Icon: InstagramIcon,
+                                        href: "https://www.instagram.com/omoyeni.io?igsh=MXJkYXRlZWM4cXlsNA==",
+                                    },
+                                    {
+                                        id: 3,
+                                        Icon: XIcon,
+                                    },
+                                    {
+                                        id: 4,
+                                        Icon: PinterestIcon,
+                                    },
+                                ].map((item, idx) => (
                                     <li key={idx}>
-                                        <Link href='#'>
-                                            <Icon scale={0.9} />
+                                        <Link
+                                            href={item.href || "#"}
+                                            target={
+                                                item.href ? "_blank" : undefined
+                                            }>
+                                            <item.Icon scale={0.9} />
                                         </Link>
                                     </li>
                                 ))}
@@ -88,3 +105,5 @@ export const Footer = () => {
         </footer>
     );
 };
+
+//Let’s add this link to the Instagram icon - https://www.instagram.com/omoyeni.io?igsh=MXJkYXRlZWM4cXlsNA==
